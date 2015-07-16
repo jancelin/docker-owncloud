@@ -52,8 +52,8 @@ RUN chown -R http:http /usr/share/webapps/owncloud/
 RUN sed -i 's,^open_basedir.*$,\0:/usr/share/webapps/owncloud/:/usr/share/webapps/owncloud/config/:/etc/webapps/owncloud/config/,g' /etc/php/php.ini
 
 # expose some important directories as volumes
-#VOLUME ["/usr/share/webapps/owncloud/data"]
-#VOLUME ["/etc/webapps/owncloud/config"]
+VOLUME ["/usr/share/webapps/owncloud/data"]
+VOLUME ["/etc/webapps/owncloud/config"]
 #VOLUME ["/usr/share/webapps/owncloud/apps"]
 
 # place your ssl cert files in here. name them server.key and server.crt
